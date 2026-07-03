@@ -1,166 +1,132 @@
-/* Content for the EcomBack homepage — text, media and structured data
-   carried over verbatim from the original site so nothing is lost. */
+/* Content for the EmpireCove retail homepage.
+   Headings and copy are adapted from empirecove.com and reframed for a
+   direct-to-consumer, lifestyle shopping experience. No remote assets:
+   all imagery is hand-drawn SVG (see components/hats.jsx) so the site is
+   self-contained, fast, and fully controllable for contrast/alt text. */
 
-const CDN = 'https://www.ecomback.com/wp-content/uploads'
+/* Rotating announcement bar messages. */
+export const announcements = [
+  'Free shipping on all orders over $250',
+  'SUMMER25 — get 25% off your first order',
+  'Free returns within 15 days',
+]
 
 export const nav = [
-  { label: 'Who We Are', href: 'about.html' },
-  { label: 'ADA Compliance', href: 'ada-compliance.html' },
   {
-    label: 'Services',
-    href: 'services.html',
+    label: 'Hats',
+    href: '#categories',
     submenu: [
-      { label: 'ADA Title II Compliance', href: 'services.html' },
-      { label: 'Web Accessibility Audit & Support', href: 'services.html' },
-      { label: 'Audio Description Services', href: 'services.html' },
-      { label: 'Blind User Testing', href: 'services.html' },
-      { label: 'ACR and VPAT Services', href: 'services.html' },
-      { label: 'PDF Remediation', href: 'services.html' },
-      { label: 'Shopify Development', href: 'services.html' },
-      { label: 'Speed Optimization', href: 'services.html' },
+      { label: 'Elite', href: '#categories' },
+      { label: 'Performance', href: '#categories' },
+      { label: '5 Panel', href: '#categories' },
+      { label: 'Essential Snapback', href: '#categories' },
+      { label: 'Trucker', href: '#categories' },
+      { label: 'Fitted', href: '#categories' },
     ],
   },
   {
-    label: 'Learn',
-    href: '#',
+    label: 'Straw Hats',
+    href: '#categories',
     submenu: [
-      { label: '2025 Annual ADA Lawsuit Report', href: '#' },
-      { label: 'Website Lawsuit Reports', href: '#' },
-      { label: 'Blogs', href: '#' },
-      { label: 'How to Guides', href: '#' },
-      { label: 'Accessibility Checklist', href: '#' },
-      { label: 'Screen Reader Shortcut Keys', href: '#' },
+      { label: 'Straw Hats', href: '#categories' },
+      { label: 'Rope Hats', href: '#categories' },
+      { label: 'Beanies', href: '#categories' },
     ],
   },
-  { label: 'Contact', href: 'contact.html' },
+  { label: 'New In', href: '#popular' },
+  { label: 'Gallery', href: '#lifestyle' },
+  { label: 'About', href: '#difference' },
+  { label: 'Contact', href: '#contact' },
 ]
 
-export const accreditations = [
-  { src: `${CDN}/2025/03/Iaap-1.svg`, alt: 'IAAP — Organizational Member' },
-  { src: `${CDN}/2025/01/W3C_circle-1.svg`, alt: 'W3C Member and Advisory Committee' },
-  { src: `${CDN}/2025/01/court_circlelogo-1.svg`, alt: 'Court Approved Accessibility Provider' },
+/* Nine shop-by-category tiles. `shape` maps to an SVG in hats.jsx,
+   `tone` selects a warm colour block for a lively, editorial grid. */
+export const categories = [
+  { name: 'Elite', tagline: 'Structured & refined', shape: 'fitted', tone: 'terra' },
+  { name: 'Performance', tagline: 'Built to move', shape: 'runner', tone: 'forest' },
+  { name: '5 Panel', tagline: 'Street-ready', shape: 'fivepanel', tone: 'gold' },
+  { name: 'Essential Snapback', tagline: 'The everyday classic', shape: 'snapback', tone: 'ink' },
+  { name: 'Trucker', tagline: 'Breezy mesh back', shape: 'trucker', tone: 'clay' },
+  { name: 'Fitted', tagline: 'Your exact size', shape: 'fitted', tone: 'plum' },
+  { name: 'Straw Hats', tagline: 'Sun-season staple', shape: 'straw', tone: 'gold' },
+  { name: 'Rope Hats', tagline: 'Coastal character', shape: 'rope', tone: 'forest' },
+  { name: 'Beanies', tagline: 'Cold-weather cosy', shape: 'beanie', tone: 'terra' },
 ]
 
-export const platforms = [
-  { src: `${CDN}/2025/02/shopify.svg`, alt: 'Shopify' },
-  { src: `${CDN}/2025/02/wordpress.svg`, alt: 'WordPress' },
-  { src: `${CDN}/2025/02/squarespace.svg`, alt: 'Squarespace' },
-  { src: `${CDN}/2025/02/Wix-Com.svg`, alt: 'Wix' },
-  { src: `${CDN}/2025/02/woocommerce.svg`, alt: 'WooCommerce' },
-  { src: `${CDN}/2025/02/magento-logo.svg`, alt: 'Magento' },
-  { src: `${CDN}/2025/02/webflow.svg`, alt: 'Webflow' },
-  { src: `${CDN}/2025/02/bigcommerce.svg`, alt: 'BigCommerce' },
+/* Popular Picks — retail product cards. */
+export const products = [
+  { name: 'Coastline Trucker', price: 32, shape: 'trucker', tone: 'clay', colors: ['#B23A1E', '#2F4A3A', '#2A2016'], badge: 'Bestseller' },
+  { name: 'Summit 5-Panel', price: 36, shape: 'fivepanel', tone: 'forest', colors: ['#2F4A3A', '#C9A227', '#EDE3D0'], badge: null },
+  { name: 'Heritage Fitted', price: 42, shape: 'fitted', tone: 'ink', colors: ['#2A2016', '#6E5A3E', '#B23A1E'], badge: 'New' },
+  { name: 'Harbor Snapback', price: 34, shape: 'snapback', tone: 'gold', colors: ['#C9A227', '#2A2016', '#EDE3D0'], badge: null },
+  { name: 'Daybreak Straw', price: 48, shape: 'straw', tone: 'terra', colors: ['#D9B26A', '#EDE3D0', '#8F6A3A'], badge: 'Limited' },
+  { name: 'Ridge Beanie', price: 28, shape: 'beanie', tone: 'plum', colors: ['#5B3A4B', '#2F4A3A', '#2A2016'], badge: null },
 ]
 
-export const disabilities = [
-  'Deafness', 'Blindness', 'Photosensitivity', 'Hearing loss', 'Low vision',
-  'Learning disabilities', 'Cognitive limitations', 'Speech disabilities', 'Dexterity',
+/* Headline stats (animated count-up). */
+export const stats = [
+  { value: 20000, suffix: 'K+', display: 20, label: 'Happy customers', kind: 'k' },
+  { value: 1, suffix: 'M+', label: 'Hats shipped', kind: 'm' },
+  { value: 50, suffix: '+', label: 'Signature styles', kind: 'plain' },
+  { value: 5, suffix: '★', label: 'Average rating', kind: 'plain' },
 ]
 
-export const risks = [
-  'Damage to brand reputation',
-  'Loss of potential clients',
-  'Rebuilding your website with accessibility guidelines',
-  'Heavy attorney fees and legal fines',
-  'Defending a lawsuit in federal or state courts',
+/* "The EmpireCove Difference" — retail-framed promises. */
+export const promises = [
+  { icon: 'shipping', title: 'Worldwide shipping', body: 'Free on every order over $250, tracked to your door wherever you are.' },
+  { icon: 'returns', title: 'Free 15-day returns', body: 'Changed your mind? Send it back within 15 days — no hidden costs, no fuss.' },
+  { icon: 'preview', title: 'Free personalization previews', body: 'Add your own touch and see a free mock-up before you commit to a single stitch.' },
+  { icon: 'clock', title: 'On-time, every time', body: 'Quick turnaround and honest timelines, so your order arrives exactly when promised.' },
+  { icon: 'star', title: '5-star rated', body: 'Thousands of reviews from people who found their perfect fit and came back for more.' },
+  { icon: 'quality', title: 'Quality you can feel', body: 'Durable materials and clean stitching on every panel, brim, and band.' },
 ]
 
-export const ifSued = [
-  'You will have to fix your website anyway',
-  "Pay your attorney's fees",
-  "Defend your case — if you lose, you owe their attorney's fees plus fines",
-  'Or settle if advisable — five to six figures',
-  'Follow the ongoing process for compliance',
-  'Periodic audits as per judgment or settlement',
-  'Avoid copy-cat lawsuits',
+/* "Find Your Fit" — three simple steps. */
+export const findFit = [
+  { title: 'Pick your silhouette', body: 'Snapback, trucker, fitted, straw or beanie — start with the shape that fits your day.' },
+  { title: 'Choose your colours', body: 'Swap between our warm, wearable palettes until it feels unmistakably yours.' },
+  { title: 'Make it personal', body: 'Add a logo or leave it clean, then preview a free mock-up before checkout.' },
 ]
 
-export const benefits = [
+export const testimonials = [
   {
-    icon: `${CDN}/2025/02/user_experience.svg`,
-    title: 'Inclusive user experience is good for business',
-    body: 'Accessible websites, apps, and content give every visitor a great experience, and those who need it can use assistive technology.',
-  },
-  {
-    icon: `${CDN}/2025/02/better_search.svg`,
-    title: 'Better search results and conversion',
-    body: 'Fixing structural issues in your theme and code helps Google crawl and index your pages for the best experience.',
-  },
-  {
-    icon: `${CDN}/2025/02/tax_credit.svg`,
-    title: 'Up to $5,000 ADA tax credit',
-    body: 'The government gives small to mid-size businesses up to $5,000 back via the ADA tax credit and deduction in a taxable year.',
-  },
-  {
-    icon: `${CDN}/2025/02/business_practice.svg`,
-    title: "It's the law and best business practice",
-    body: 'Owners, developers, and designers must follow accessibility steps across themes, documents, PDFs, videos, and apps.',
+    quote: 'The fit is perfect and it arrived on time with zero hidden costs. Exactly what was promised.',
+    name: 'Maya R.',
+    role: 'Verified buyer · Trucker',
+    tone: 'terra',
   },
   {
-    icon: `${CDN}/2025/02/ada_lawsuits.svg`,
-    title: 'Avoid lawsuits',
-    body: 'The best way to reduce the risk of ADA accessibility lawsuits is to make your website WCAG-compliant at Level AA.',
+    quote: 'Ordered from overseas and the worldwide shipping was quick. The free mock-up sold me before I bought.',
+    name: 'Devon K.',
+    role: 'Verified buyer · Custom 5-Panel',
+    tone: 'forest',
+  },
+  {
+    quote: 'Five stars. The straw hat is my summer go-to now, and returns were genuinely free and easy.',
+    name: 'Priya S.',
+    role: 'Verified buyer · Straw Hat',
+    tone: 'gold',
   },
 ]
 
-export const lawsuitTable = [
-  { state: 'New York', count: 1108, share: '28.06%' },
-  { state: 'Florida', count: 950, share: '24.06%' },
-  { state: 'California', count: 787, share: '19.93%' },
-  { state: 'Illinois', count: 576, share: '14.59%' },
-  { state: 'Minnesota', count: 160, share: '4.05%' },
-  { state: 'Pennsylvania', count: 101, share: '2.56%' },
-  { state: 'Missouri', count: 85, share: '2.15%' },
-  { state: 'All other states', count: 181, share: '4.58%' },
-]
-
-export const processSteps = [
-  { title: 'We Audit', body: 'A manual, code-level review of every page and flow against WCAG 2.1 / 2.2 AA.' },
-  { title: 'We Fix', body: 'Our developers remediate issues directly in your theme and code — no overlays.' },
-  { title: 'We Certify', body: 'Independent users with disabilities verify your site on recorded calls.' },
-  { title: 'We Monitor', body: 'Ongoing checks catch regressions as your site changes over time.' },
-  { title: 'We Train', body: 'We train your team to keep new content and updates accessible.' },
-]
-
-export const pillars = [
-  { title: 'A dedicated team', body: 'Auditors, developers, content experts, usability testers, and people with disabilities working together.' },
-  { title: 'Real WCAG compliance', body: 'We help you achieve compliance, increase brand awareness, and reduce the risk of ADA lawsuits.' },
-  { title: 'Save time and money', body: 'We have the skills and experience to save you weeks of coding and costly training.' },
-  { title: 'Training included', body: 'We train your team to maintain accessibility and audit your site as you make updates.' },
-]
-
-export const news = [
-  { source: 'WFTV9', date: 'March 6, 2026', title: 'Inside the Interview: ADA Website Lawsuits Are Surging in Florida' },
-  { source: 'KIRO 7', date: 'March 3, 2026', title: 'EcomBack CEO Speaks Out on ADA Website Litigation Targeting Washington Businesses' },
-  { source: 'Interview', date: 'September 22, 2025', title: 'Must-Watch Interview on Website Accessibility and ADA Lawsuits' },
-]
-
-export const media = {
-  hero: `${CDN}/2025/03/image-min-1-1.png`,
-  enjoy: `${CDN}/2025/01/enjoy-min.png`,
-  ada: `${CDN}/2025/02/ada.svg`,
-  risk: `${CDN}/2025/02/risk_of_not_having.svg`,
-  adaBanner: `${CDN}/2025/01/adacompliancebanner_03.png`,
-  infographic: `${CDN}/2026/01/infographic.svg`,
-  reportBanner: `${CDN}/2026/01/Banner.png`,
-  sued: `${CDN}/2025/01/accessb-min.png`,
-  heart: `${CDN}/2025/01/dill-1.png`,
-  blind: `${CDN}/2025/01/blind_img.png`,
-  ratingBanner: `${CDN}/2025/01/accss-imageforbanner.png`,
-  calendly: `${CDN}/2025/01/ecomback-calendry-1-1024x656.png`,
-  logo: `${CDN}/2025/01/EcomBack-Logo.svg`,
-  nyt: `${CDN}/2025/02/new_york_times_logo.svg`,
-  nytThumb: `${CDN}/2025/01/blind-min.png`,
-  ftcThumb: `${CDN}/2025/02/Screenshot-2025-01-21-at-4.04.43-PM.png`,
-}
-
-export const video = {
-  home: {
-    plain: 'https://res.cloudinary.com/buddhablessu-com/video/upload/w_1036,q_auto,f_auto/v1743101871/ecomback_videos/new-videos/Ecomback_Homepage_Video_without_audio_compressed.mp4',
-    ad: 'https://res.cloudinary.com/buddhablessu-com/video/upload/w_1036,q_auto,f_auto/v1743101872/ecomback_videos/new-videos/ecomback_home_with_audio_description_compressed.mp4',
+export const footerLinks = [
+  {
+    heading: 'Shop',
+    links: ['Elite', 'Performance', 'Snapback', 'Trucker', 'Fitted', 'Straw Hats', 'Beanies'],
   },
-  wave: {
-    plain: `${CDN}/2025/03/How-to-check-website-Accessibility-using-Wave-Lighthouse-EcomBack.com-1.mp4`,
-    ad: `${CDN}/2025/03/How-to-check-website-Accessibility-using-Wave-Lighthouse-EcomBack.com-mixed_ad.mp4`,
+  {
+    heading: 'Help',
+    links: ['Shipping & Delivery', 'Returns & Exchanges', 'Order Tracking', 'Size Guide', 'FAQ'],
   },
+  {
+    heading: 'Company',
+    links: ['About', 'Gallery', 'Contact', 'Privacy', 'Terms'],
+  },
+]
+
+export const contact = {
+  phone: '+1 (800) 555-0142',
+  phoneHref: 'tel:+18005550142',
+  email: 'hello@empirecove.com',
+  address: '1200 Harbor Way, Los Angeles, CA',
 }
